@@ -10,7 +10,6 @@ stop:
 
 clean: stop
 	docker-compose -f srcs/docker-compose.yml down -v
-	# docker-compose -f srcs/docker-compose-bonus down -v
 
 fclean: clean
 	docker system prune -af
@@ -21,14 +20,17 @@ fclean: clean
 re:	fclean all
 
 bonus: clean
-	docker-compose -f srcs/docker-compose-bonus.yml build
-	docker-compose -f srcs/docker-compose-bonus.yml up
+	mkdir -p /home/mportrai/data/mariadb
+	mkdir -p /home/mportrai/data/wordpress
+	chmod 755 /home/mportrai/data/mariadb
+	chmod 755 /home/mportrai/data/wordpress
+	docker-compose -f srcs/docker-compose-bonus.yml up --build
 
 stop_bonus:
 	docker-compose -f srcs/docker-compose-bonus.yml stop
 
 clean_bonus: stop_bonus
-	docker-compose -f srcs/docker-compose-bonus down -v
+	docker-compose -f srcs/docker-compose-bonus.yml down -v
 
 fclean_bonus: clean_bonus
 	docker system prune -af
