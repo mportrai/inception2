@@ -1,4 +1,4 @@
-all: clean_bonus
+all: fclean_bonus
 	mkdir -p /home/mportrai/data/mariadb
 	mkdir -p /home/mportrai/data/wordpress
 	chmod 755 /home/mportrai/data/mariadb
@@ -19,7 +19,7 @@ fclean: clean
 
 re:	fclean all
 
-bonus: clean
+bonus: fclean
 	mkdir -p /home/mportrai/data/mariadb
 	mkdir -p /home/mportrai/data/wordpress
 	chmod 755 /home/mportrai/data/mariadb
