@@ -1,10 +1,10 @@
 #!/bin/bash
 
-sleep 15
+sleep 10
 
 echo "Lancement script wordpress"
 	wp core download --allow-root --locale=fr_FR --path='/var/www/html'
-	sleep 10
+	sleep 5
 	wp config create --allow-root --dbname=$SQL_DATABASE --dbuser=$SQL_USER \
 				--dbpass=$SQL_PASSWORD --dbhost=mariadb:3306 \
 				--path='/var/www/html'
