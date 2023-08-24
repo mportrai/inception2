@@ -58,7 +58,7 @@ services:
     build:
       context: ./bonus/adminer
       dockerfile: Dockerfile
-    environnement:
+    environment:
       - ADMINER_DEFAULT_SERVER: mariadb
     ports:
       - "8080:8080"
