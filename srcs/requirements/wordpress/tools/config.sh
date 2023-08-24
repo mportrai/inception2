@@ -36,10 +36,10 @@ echo "plus condition"
 # 	mkdir /run/php
 # fi
 
-RUN mkdir -p /run/php/7.4/fpm
-RUN chown -R www-data:www-data /run/php/7.4/fpm
-RUN chown -R www-data:www-data /var//www/*
-RUN chmod -R 777 /var/www/*
+mkdir -p /run/php/7.4/fpm
+chown -R www-data:www-data /run/php/7.4/fpm
+chown -R www-data:www-data /var//www/*
+chmod -R 777 /var/www/*
 
 /usr/sbin/php-fpm7.4 -F
 
