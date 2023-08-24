@@ -3,7 +3,6 @@ FROM debian:bullseye
 RUN apt-get update
 RUN apt-get install -y apt-utils
 RUN apt-get install -y mariadb-server
-RUN rm -rf /var/lib/apt/lists/*
 RUN mkdir -p /var/run/mysqld
 RUN chown -R mysql:mysql /var/run/mysqld
 RUN chmod 755 /var/run/mysqld

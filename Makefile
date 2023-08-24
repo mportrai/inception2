@@ -15,9 +15,9 @@ clean: stop
 
 fclean: clean
 	docker system prune -af
-	rm -rf ../data/wordpress
-	rm -rf ../data/mariadb
-	rm -rf ../data
+	rm -rf /home/mportrai/data/wordpress
+	rm -rf /home/mportrai/data/mariadb
+	rm -rf /home/mportrai/data
 
 re:	fclean all
 
