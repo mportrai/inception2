@@ -31,8 +31,8 @@ echo "Lancement script wordpress"
 
 echo "plus condition"
 
-# mkdir -p /run/php/7.4/fpm
-# chown -R www-data:www-data /run/php/7.4/fpm
+mkdir -p /run/php/7.4/fpm
+chown -R www-data:www-data /run/php/7.4/fpm
 chmod -R 755 /var/www/html/
 chown -R www-data:www-data /var/www/html/
 
