@@ -73,7 +73,8 @@ services:
     build:
       context: ./bonus/redis_cache
       dockerfile: Dockerfile
-    volumes: wordpress:/var/www/html/
+    volumes: 
+      - wordpress:/var/www/html/
     ports:
       - "6379:6379"
     env_file: .env
@@ -89,9 +90,14 @@ services:
     build:
       context: ./bonus/ftp-server
       dockerfile: Dockerfile
-    volumes: wordpress:/var/ftp
+    volumes: 
+      - wordpress:/var/ftp
     ports:
       - "21:21"
+    env_file: .env
+    restart: on-failure
+    depends_on:
+      - wordpress
 
 volumes:
   wordpress:
