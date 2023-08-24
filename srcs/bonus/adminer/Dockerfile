@@ -2,6 +2,7 @@ FROM debian:bullseye
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
+RUN apt-get install -y curl
 RUN apt-get install -y apache2-utils
 RUN apt-get install -y php
 RUN apt-get install -y php-curl
