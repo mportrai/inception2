@@ -19,6 +19,6 @@ echo "Lancement script wordpress"
 mkdir -p /run/php/7.4/fpm
 chown -R www-data:www-data /run/php/7.4/fpm
 chown -R www-data:www-data /var//www/*
-chmod -R 777 /var/www/*
+chmod -R 755 /var/www/*
 
 /usr/sbin/php-fpm7.4 -F
