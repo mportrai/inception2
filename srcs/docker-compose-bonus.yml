@@ -12,7 +12,7 @@ services:
     volumes:
       - mariadb:/var/lib/mysql
     expose:
-      - 3306
+      - "3306"
     env_file: .env
     restart: on-failure
 
@@ -25,9 +25,9 @@ services:
       context: ./bonus/wordpress
       dockerfile: Dockerfile
     volumes:
-      - wordpress:/var/www/html
+      - wordpress:/var/www/html/
     expose:
-      - 9000
+      - "9000"
     env_file: .env
     restart: on-failure
     depends_on:
@@ -41,8 +41,10 @@ services:
     build:
       context: ./bonus/nginx
       dockerfile: Dockerfile
+    volumes:
+      - wordpress:/var/www/html/
     ports:
-      - 443:443
+      - "443:443"
     env_file: .env
     restart: on-failure
     depends_on: 
@@ -57,7 +59,7 @@ services:
       context: ./bonus/adminer
       dockerfile: Dockerfile
     ports:
-      - 8080:8080
+      - "8080:8080"
     env_file: .env
     restart: on-failure
     depends_on:
@@ -71,9 +73,9 @@ services:
     build:
       context: ./bonus/redis_cache
       dockerfile: Dockerfile
-    volumes: wordpress:/var/www/html/wordpress
+    volumes: wordpress:/var/www/html/
     ports:
-      - 6379:6379
+      - "6379:6379"
     env_file: .env
     restart: on-failure
     depends_on:
@@ -89,7 +91,7 @@ services:
       dockerfile: Dockerfile
     volumes: wordpress:/var/ftp
     ports:
-      - 21:21
+      - "21:21"
 
 volumes:
   wordpress:

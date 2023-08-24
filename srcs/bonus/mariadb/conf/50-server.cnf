@@ -1,7 +1,4 @@
-[server]
-
 [mysqld]
-
 basedir = /usr
 datadir = /var/lib/mysql
 pid-file = /run/mysqld/mysqld.pid
