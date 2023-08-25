@@ -2,19 +2,17 @@ FROM debian:bullseye
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y php \
+RUN apt-get install -y curl \
+                    php \
                     php-common \
                     php-pear \
                     php-mbstring \
                     libapache2-mod-php \
                     php-mysql
 
-RUN apt -y install apache2 wget
-RUN systemctl enable --now wget
-
 WORKDIR /var/www/html
 RUN mkdir adminer
-RUN wget https://www.adminer.org/latest.php -O adminer/index.php
+RUN curl -L https://www.adminer.org/latest.php -o adminer/index.php
 
 EXPOSE 8080
 
