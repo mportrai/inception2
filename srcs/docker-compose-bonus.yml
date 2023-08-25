@@ -67,9 +67,9 @@ services:
     depends_on:
       - mariadb
     
-    static:
+  static:
     networks:
-      -inception
+      - inception
     image: static
     container_name: static
     build:
