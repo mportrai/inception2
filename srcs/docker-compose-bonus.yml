@@ -58,7 +58,8 @@ services:
     build:
       context: ./bonus/adminer
       dockerfile: Dockerfile
-    volumes: mariadb:/var/lib/mysql
+    volumes: 
+      - mariadb:/var/lib/mysql
     environment:
       ADMINER_DEFAULT_SERVER: mariadb
     ports:
