@@ -2,8 +2,7 @@ FROM debian:bullseye
 
 RUN apt-get update -y
 RUN apt-get upgrade -y
-RUN apt-get install -y curl \
-                    php \
+RUN apt-get install -y php \
                     php-common \
                     php-pear \
                     php-mbstring \
@@ -15,7 +14,7 @@ RUN systemctl enable --now wget
 
 WORKDIR /var/www/html
 RUN mkdir adminer
-RUN curl -L https://www.adminer.org/latest.php -o adminer/index.php
+RUN wget https://www.adminer.org/latest.php -O adminer/index.php
 
 EXPOSE 8080
 
