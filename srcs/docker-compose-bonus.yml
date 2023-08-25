@@ -69,19 +69,19 @@ services:
     depends_on:
       - mariadb
     
-  # static:
-  #   networks:
-  #     - inception
-  #   image: static
-  #   container_name: static
-  #   build:
-  #     context: ./bonus/static
-  #     dockerfile: Dockerfile
-  #   volumes:
-  #     - wordpress:/var/www/html
-  #   expose:
-  #     - "1995"
-  #   restart: on-failure
+  static:
+    networks:
+      - inception
+    image: static
+    container_name: static
+    build:
+      context: ./bonus/static
+      dockerfile: Dockerfile
+    volumes:
+      - wordpress:/var/www/html
+    expose:
+      - "1995"
+    restart: on-failure
 
   # redis:
   #   networks:
