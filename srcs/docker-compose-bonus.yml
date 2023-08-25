@@ -83,23 +83,6 @@ services:
       - "1995"
     restart: on-failure
 
-  redis:
-    networks:
-      - inception
-    image: redis
-    container_name: redis
-    build:
-      context: ./bonus/redis_cache
-      dockerfile: Dockerfile
-    volumes: 
-      - wordpress:/var/www/html/
-    ports:
-      - "6379:6379"
-    env_file: .env
-    restart: on-failure
-    depends_on:
-      - wordpress
-
 volumes:
   wordpress:
     driver: local
