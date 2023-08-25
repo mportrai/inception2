@@ -89,13 +89,13 @@ volumes:
     driver_opts:
       type: none
       o: bind
-      device: "/home/mportrai/data/wordpress"
+      device: "/home/mportrai/data_bonus/wordpress"
   mariadb:
     driver: local
     driver_opts:
       type: none
       o: bind
-      device: "/home/mportrai/data/mariadb"
+      device: "/home/mportrai/data_bonus/mariadb"
 
 networks:
   inception:
