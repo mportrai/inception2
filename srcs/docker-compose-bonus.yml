@@ -66,7 +66,19 @@ services:
     restart: on-failure
     depends_on:
       - mariadb
-  
+    
+    static:
+    networks:
+      -inception
+      image: static
+      container_name: static
+      build:
+        context: ./bonus/static
+        dockerfile: Dockerfile
+      expose:
+        - "1995"
+      restart: on-failure
+
   # redis:
   #   networks:
   #     - inception
